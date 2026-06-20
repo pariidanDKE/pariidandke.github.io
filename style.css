@@ -93,6 +93,8 @@ a:hover { color: #fff; }
 .avatar {
   width: 60px;
   height: 60px;
+  flex: 0 0 60px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 14%;
