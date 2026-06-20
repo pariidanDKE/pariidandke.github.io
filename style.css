@@ -89,7 +89,9 @@ a:hover { color: #fff; }
 
 /* landing avatar */
 .idline { display: flex; align-items: center; gap: 16px; margin-top: 6px; }
+.idtext { min-width: 0; }
 .idline .term-out.name { margin-top: 0; }
+.tagline-line { margin-top: 2px; font-size: 1rem; }
 .avatar {
   width: 60px;
   height: 60px;
