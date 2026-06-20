@@ -73,8 +73,15 @@ a:hover { color: #fff; }
   padding: 48px 24px 80px;
 }
 
-.term-line { margin-top: 22px; word-break: break-word; }
-.term-line:first-child { margin-top: 0; }
+.term-line {
+  margin-top: 38px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(54, 227, 107, 0.14);
+  word-break: break-word;
+}
+.term-line:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+/* lines that belong to the previous exchange — no divider, tight spacing */
+.term-line.same { margin-top: 6px; padding-top: 0; border-top: none; }
 .prompt { color: var(--green-dim); margin-right: 8px; user-select: none; }
 .term-out { color: var(--green-soft); margin: 6px 0 0; max-width: 70ch; }
 .term-out.name { font-size: 1.6rem; font-weight: 700; color: var(--green); }
@@ -119,11 +126,17 @@ a:hover { color: #fff; }
   padding: 4px 0 4px 16px;
 }
 .pub-title { color: var(--green-soft); font-weight: 600; }
-.pub-venue { color: var(--green-dim); font-size: 0.85em; margin-top: 2px; }
-.pub-desc { color: var(--muted); margin-top: 4px; max-width: 72ch; }
+.pub-venue { color: var(--green-dim); font-size: 0.85em; margin-top: 4px; }
+.pub-co {
+  color: var(--amber);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.pub-desc { color: var(--muted); margin-top: 6px; max-width: 72ch; }
+.pub-tags { margin-top: 10px; }
 
 .ext { color: var(--green-soft); }
-.cursor { margin-top: 26px; }
+.cursor { margin-top: 14px; padding-top: 0; border-top: none; }
 
 /* ============================================================
    PROJECT PAGES — dark & readable
@@ -148,6 +161,7 @@ a:hover { color: #fff; }
 }
 .proj-head h1 .sub { font-size: 0.5em; color: var(--muted); font-weight: 400; }
 .proj-beat { color: var(--green-dim); margin: 8px 0 0; }
+.authors { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; font-style: italic; }
 
 .wip-badge {
   display: inline-block;
@@ -219,6 +233,24 @@ figcaption {
   text-shadow: none;
 }
 .prose p { margin: 0 0 16px; }
+
+/* abstract block */
+.abstract {
+  margin: 32px 0;
+  border-left: 3px solid var(--border-bright);
+  background: var(--bg-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+}
+.abstract h2 { margin: 0 0 10px; font-size: 1.05rem; font-family: var(--mono); }
+.abstract p {
+  font-family: var(--sans);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+  text-shadow: none;
+}
 
 .gallery {
   display: grid;

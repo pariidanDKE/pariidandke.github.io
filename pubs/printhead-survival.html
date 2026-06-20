@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predicting the Lifespan of Industrial Printheads with Survival Analysis — Dan Parii</title>
+  <meta name="description" content="Predicting the Lifespan of Industrial Printheads with Survival Analysis (Canon, IEEE ICPS 2025). A publication by Dan Parii." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="crt">
+  <div class="scanlines" aria-hidden="true"></div>
+
+<main class="project">
+
+  <nav class="backnav">
+    <a href="../index.html"><span class="prompt">pariidan@portfolio:~/publications$</span> cd ..</a>
+  </nav>
+
+  <header class="proj-head">
+    <h1>Predicting the Lifespan of Industrial Printheads with Survival Analysis</h1>
+    <p class="proj-beat"><span class="pub-co">Canon</span> · IEEE ICPS 2025</p>
+    <p class="authors">Dan Parii, E. Janssen, G. Tang, C. Kouzinopoulos, M. Pietrasik</p>
+    <ul class="tags">
+      <li>Survival Analysis</li>
+      <li>Predictive Maintenance</li>
+      <li>Applied ML</li>
+      <li>ETL</li>
+    </ul>
+    <div class="links"><a class="btn" href="https://ieeexplore.ieee.org/document/11087918">&gt; view paper</a></div>
+  </header>
+
+  <section class="abstract">
+    <h2><span class="comment">// abstract</span></h2>
+    <p>Accurately predicting the lifespan of critical device components is essential for maintenance planning and production optimization, making it a topic of significant interest in both academia and industry. In this work, we investigate the use of survival analysis for predicting the lifespan of production printheads developed by Canon Production Printing. Specifically, we focus on the application of five techniques to estimate survival probabilities and failure rates: the Kaplan-Meier estimator, Cox proportional hazard model, Weibull accelerated failure time model, random survival forest, and gradient boosting. The resulting estimates are further refined using isotonic regression and subsequently aggregated to determine the expected number of failures. The predictions are then validated against real-world ground truth data across multiple time windows to assess model reliability. Our quantitative evaluation using three performance metrics demonstrates that survival analysis outperforms industry-standard baseline methods for printhead lifespan prediction.</p>
+  </section>
+
+  <section class="learned">
+    <h2><span class="comment">// key results</span></h2>
+    <ul>
+      <li>Survival analysis outperforms the industry-standard baseline for printhead lifespan prediction, with most configurations under the 10% error target (Cox PH best, ~3.6% MAPE).</li>
+      <li>Calibration substantially improves accuracy for several models — Kaplan-Meier dropped from ~11% to ~5.5% MAPE.</li>
+      <li>A key finding: strong scores on standard survival metrics (concordance index, integrated Brier score) did not translate into accurate aggregate failure-count predictions.</li>
+    </ul>
+  </section>
+
+  <section class="learned">
+    <h2><span class="comment">// my role</span></h2>
+    <ul>
+      <li>Built the ETL pipeline pulling from a ClickHouse database, cleaning and reshaping data into an ML-friendly table with expert input.</li>
+      <li>Explored predictive-modelling avenues against data quality and selected survival analysis as the right fit.</li>
+      <li>Calibrated failure probabilities and fit a Weibull CDF to extrapolate to unseen lifespans; communicated progress via data storytelling.</li>
+    </ul>
+  </section>
+
+  <footer class="proj-foot">
+    <a href="../index.html"><span class="prompt">pariidan@portfolio:~/publications$</span> cd .. <span class="blink">_</span></a>
+  </footer>
+</main>
+</body>
+</html>

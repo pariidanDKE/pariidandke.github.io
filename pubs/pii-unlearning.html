@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Machine Unlearning of PII in LLMs — Dan Parii</title>
+  <meta name="description" content="Machine Unlearning of PII in LLMs (SURF, NLLP 2025 · ACL Anthology). A publication by Dan Parii." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="crt">
+  <div class="scanlines" aria-hidden="true"></div>
+
+<main class="project">
+
+  <nav class="backnav">
+    <a href="../index.html"><span class="prompt">pariidan@portfolio:~/publications$</span> cd ..</a>
+  </nav>
+
+  <header class="proj-head">
+    <h1>Machine Unlearning of PII in LLMs</h1>
+    <p class="proj-beat"><span class="pub-co">SURF</span> · NLLP 2025 · ACL Anthology</p>
+    <p class="authors">Dan Parii, Thomas van Osch, Chang Sun</p>
+    <ul class="tags">
+      <li>Machine Unlearning</li>
+      <li>LLMs</li>
+      <li>Privacy / PII</li>
+      <li>NLP</li>
+      <li>PyTorch</li>
+    </ul>
+    <div class="links"><a class="btn" href="https://aclanthology.org/2025.nllp-1.6/">&gt; view paper</a><a class="btn alt" href="https://github.com/pariidanDKE/Toward-Practical-PII-Unlearning">&gt; view on github</a></div>
+  </header>
+
+  <section class="abstract">
+    <h2><span class="comment">// abstract</span></h2>
+    <p>Pretrained LLMs are trained on massive web-scale datasets, which often contain personally identifiable information (PII), raising serious legal and ethical concerns. A key research challenge is how to effectively unlearn PII without degrading the model&#x27;s utility or leaving implicit knowledge that can be exploited. This study proposes UnlearnPII, a benchmark designed to evaluate the effectiveness of PII unlearning methods, addressing limitations in existing metrics that overlook implicit knowledge and assess all tokens equally. Our benchmark focuses on detecting PII leakage, testing model robustness through obfuscated prompts and jailbreak attacks over different domains, while measuring utility and retention quality. To advance practical solutions, we propose a new PII unlearning method — PERMUtok. By applying token-level noise, we achieve 1) simplified integration into existing workflows, 2) improved retention and output quality, while maintaining unlearning effectiveness. The code is open-source and publicly available.</p>
+  </section>
+
+  <section class="learned">
+    <h2><span class="comment">// key results</span></h2>
+    <ul>
+      <li>PERMUtok — a model-agnostic extension of PERMU that injects noise at the token level via simple token substitution, so the perturbed unlearning data can be precomputed and reused for any model, with no changes to the model&#x27;s forward function.</li>
+      <li>UnlearnPII — a benchmark of 225 synthetic profiles across 16 PII categories in general, banking and medical domains, with fine-grained metrics probing both explicit and implicit leakage under DirectQA, ParaphrasedQA, OneHopQA, InvertedQA and extraction attacks.</li>
+      <li>PERMUtok drives Direct-attack leakage below 1% ESR while preserving &gt;95% retention of non-target PII, and beats the original PERMU at removing implicit knowledge (4.5% vs 12.3% inverted-attack ESR); general-benchmark scores (MMLU-Pro, GSM8K, ARC) drop under 1%.</li>
+      <li>Semantically rich PII (occupation, disease, treatment) is the hardest to erase, and larger models unlearn more cleanly — Qwen2.5-32B reached 0% Direct ESR.</li>
+    </ul>
+  </section>
+
+  <section class="learned">
+    <h2><span class="comment">// my role</span></h2>
+    <ul>
+      <li>Designed and generated the synthetic UnlearnPII dataset (225 profiles, 16 PII categories) using prompt-engineering with vLLM.</li>
+      <li>Extended PERMU into the token-level, model-agnostic PERMUtok and implemented the unlearning training in PyTorch (modifying forward and loss functions).</li>
+      <li>Ran experiments across Llama2-7B / Llama3.1-8B and a Qwen2.5 scaling study (1.5B–32B) on SURF&#x27;s Snellius supercomputer, using Bitsandbytes and DeepSpeed for quantization and parallelization.</li>
+    </ul>
+  </section>
+
+  <footer class="proj-foot">
+    <a href="../index.html"><span class="prompt">pariidan@portfolio:~/publications$</span> cd .. <span class="blink">_</span></a>
+  </footer>
+</main>
+</body>
+</html>
