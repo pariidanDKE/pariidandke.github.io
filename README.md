@@ -1,6 +1,6 @@
 # paridanDKE.github.io
 
-Personal projects site for Dan Pari, published with GitHub Pages.
+Personal projects site for Dan Parii, published with GitHub Pages.
 
 ## How it works
 
