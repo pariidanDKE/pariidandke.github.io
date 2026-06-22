@@ -64,8 +64,8 @@
     <h2><span class="comment">// what I learned</span></h2>
     <ul>
       <li>An agent&#x27;s ceiling is its toolset: handing Gemma a depth + segmentation tool unlocked spatial reasoning it fundamentally couldn&#x27;t do alone.</li>
-      <li>Bounding-box “pointing” plus a segmentation head is a clean way to ground a language model to a precise object rather than a vague region.</li>
-      <li>Designing blind-first forces real clarity: the system has to know where things are, not just be able to name them.</li>
+      <li>(Very) small models like Gemma E4B and E2B are much more vulnerable to context rot: giving the agent too many responsibilities broke it, and splitting it into a multi-agent system is what made it work.</li>
+      <li>Designing blind-first forces real clarity: making the workflow reliable meant putting a lot of guardrails in place.</li>
     </ul>
   </section>
 
