@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Convo Digest · Dan Parii</title>
+  <meta name="description" content="Convo Digest: a Claude Code plugin for local conversation recall. A project by Dan Parii." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Convo Digest · Dan Parii" />
+  <meta property="og:description" content="Convo Digest: a Claude Code plugin for local conversation recall. A project by Dan Parii." />
+  <meta property="og:image" content="https://pariidandke.github.io/assets/og.png" />
+  <meta property="og:url" content="https://pariidandke.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Convo Digest · Dan Parii" />
+  <meta name="twitter:description" content="Convo Digest: a Claude Code plugin for local conversation recall. A project by Dan Parii." />
+  <meta name="twitter:image" content="https://pariidandke.github.io/assets/og.png" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="crt">
+  <div class="scanlines" aria-hidden="true"></div>
+
+<main class="project">
+
+  <nav class="backnav">
+    <a href="../index.html"><span class="prompt">pariidan@portfolio:~/projects$</span> cd ..</a>
+  </nav>
+
+  <header class="proj-head">
+    <h1>Convo Digest</h1>
+    <p class="proj-beat"># dev tooling + cost-aware summarization</p>
+
+    <ul class="tags">
+      <li>Developer Tools</li>
+      <li>Claude Code Plugin</li>
+      <li>LLM Summarization</li>
+      <li>Agent Orchestration</li>
+      <li>Context Engineering</li>
+    </ul>
+    <div class="links"><a class="btn" href="https://github.com/pariidanDKE/convo-digest">&gt; view on github</a></div>
+  </header>
+
+  <figure class="hero wide">
+    <img src="../assets/convo-digest/flow.png" alt="Convo Digest flow: finished conversations to a searchable recall index, via a background prepare / summarize / index pipeline, then /recall and /digest-archive." loading="lazy" />
+    <figcaption>How it works: finished conversations become a local, searchable recall index.</figcaption>
+  </figure>
+
+  <section class="prose">
+    <p>Convo Digest is a Claude Code plugin, now live and installable from the marketplace, that turns your finished conversations into a searchable recall index, so you (and Claude) can find past work when you start something new and triage what you're done with. It scratches my own itch: picking up relevant conversations from previous days without scrolling forever.</p>
+    <p>Each conversation is summarized into a compact six-field record (title, topics, gist, status, unresolved, key entities). The work runs as a background workflow orchestrating small read-only agents on the cheap Haiku model, so the interactive session stays free, and large conversations are downsampled to a tail-weighted view and expanded on demand under a token budget, so no single summary blows the context. Everything is incremental and checkpointed: only changed conversations get re-summarized.</p>
+    <p>It runs entirely locally on your Claude Code subscription: no API key, and nothing leaves the machine. A small project, but a real exercise in balancing product quality against time and cost.</p>
+  </section>
+
+  <section class="learned">
+    <h2><span class="comment">// what I learned</span></h2>
+    <ul>
+      <li>Keeping summarization cheap (small Haiku agents in a background workflow) is what makes a dev tool pleasant to run rather than costly.</li>
+      <li>Downsampling big conversations to a tail-weighted view and expanding on demand under a token budget keeps any single summary from blowing the context.</li>
+      <li>A SessionStart hook can only reach you by relaying through the model, so I made the nudge self-healing: it keeps re-surfacing until the backlog is cleared or you opt out.</li>
+    </ul>
+  </section>
+
+  <footer class="proj-foot">
+    <a href="../index.html"><span class="prompt">pariidan@portfolio:~/projects$</span> cd .. <span class="blink">_</span></a>
+  </footer>
+</main>
+</body>
+</html>
